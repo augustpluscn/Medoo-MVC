@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><?php echo $title; ?></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+	
+	<link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.js"></script>
+  <![endif]-->
+  
+	<script type="text/javascript" src="static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+	<div class="row clearfix" style="margin-top:30px;">
+		<div class="col-md-12 column">
+			<div class="jumbotron">
+				<h1 style="color:#428BCA;">
+					Medoo-MVC!
+				</h1>
+				<p>
+					Medoo-MVC是一个基于Medoo的简单的mvc框架，如果之前使用过Medoo，只需几分钟学习即可开始开发，如果没接触过Medoo，十多分钟的学习时间也足够了。
+				</p>
+				<p>
+					<a href="http://medoo.in/" target="_blank" class="btn btn-warning btn-large pull-right" href="#">Medoo Framework</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h2>
+				Medoo-MVC使用
+			</h2>
+			<ul>
+				<li>
+					config
+				</li>
+				<p>
+					数据库配置文件位置在"/config/db.config.php"，正确填写配置后可进行其他操作。
+				</p>
+				<li>
+					Controller
+				</li>
+				<p>
+					通过"/index.php?c=index&a=hello"可访问indexController的hello方法。
+				</p>
+				<li>
+					View
+				</li>
+				<p>
+					在<font color=red>your</font>Controller中的hello方法通过"$this->display( $datas )"将$datas数据传入模板，模板文件:"/view/<font color=red>your</font>/<font color=red>hello</font>.html。"
+				</p>
+				<li>
+					Model
+				</li>
+				<p>
+					在<font color=red>your</font>Controller中通过"new <font color=red>your</font>()"来实例化<font color=red>your</font>，model文件位置："/model/<font color=red>your</font>.model.php"。<br /><br />
+					demo:
+					<?php if(isset($hello) && is_array($hello)):?>
+						<?php foreach ($hello as $key => $value): ?>
+							<p><?=$value; ?></p>
+						<?php endforeach; ?>
+					<?php endif; ?>
+				</p>
+				<li>
+					lib class
+				</li>
+				<p>
+					类库存放的位置"/lib/class/yourlibclass.class.php",实例化后即可调用其中的方法.<br /><br />
+					demo:<br />
+					<?php echo $hi; ?>
+				</p>
+				<li>
+					静态文件
+				</li>
+				<p>
+					js，css，img等文件建议放置于"/static"目录下。
+				</p>
+			</ul>
+			<p>
+				<a class="btn btn-primary btn-large" href="http://www.xuhaixiao.com/medoo-mvc/" target="_blank">查看详细说明</a>
+			</p>
+		</div>
+	</div>
+		<center style="height:40px;margin-top:20px;">
+			contact: <a href="mailto:xuhaixiao@yeah.net">xuhaixiao@yeah.net</a>
+		</center>
+</div>
+</body>
+</html>
