@@ -34,3 +34,7 @@ Medoo-MVC是一个基于Medoo的简单的mvc框架，如果之前使用过Medoo�
 ## 详细介绍
 
 参考http://www.xuhaixiao.com/medoo-mvc/
+
+## Medoo-MVC实例
+
+基于Medoo-MVC开发的开源项目 shop72hour ：http://www.xuhaixiao.com/shop72hour/
