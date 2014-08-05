@@ -35,7 +35,7 @@
 		</div>
 	</div>
 	<div class="row clearfix">
-		<div class="col-md-12 column">
+		<div class="col-md-6 column">
 			<h2>
 				Medoo-MVC使用
 			</h2>
@@ -50,13 +50,13 @@
 					Controller
 				</li>
 				<p>
-					通过"/index.php?c=index&a=hello"可访问indexController的hello方法。
+					通过"/index.php?c=<font color=red>index</font>&a=<font color=blue>hello</font>"可访问<font color=red>index</font>Controller的<font color=blue>hello</font>方法。
 				</p>
 				<li>
 					View
 				</li>
 				<p>
-					在<font color=red>your</font>Controller中的hello方法通过"$this->display( $datas )"将$datas数据传入模板，模板文件:"/view/<font color=red>your</font>/<font color=red>hello</font>.html。"
+					在<font color=red>your</font>Controller中的<font color=blue>hello</font>方法通过"$this->display( $datas )"将$datas数据传入模板，模板文件:"/view/<font color=red>your</font>/<font color=blue>hello</font>.html。"
 				</p>
 				<li>
 					Model
@@ -87,6 +87,30 @@
 			</ul>
 			<p>
 				<a class="btn btn-primary btn-large" href="http://www.xuhaixiao.com/medoo-mvc/" target="_blank">查看详细说明</a>
+			</p>
+		</div>
+		<div class="col-md-6 column">
+			<h2>
+				URL Rewrite
+			</h2>
+			<ul>
+				<li>
+					设置后效果
+				</li>
+				<p>
+					1.通过“http://yourSiteUrl/<font color=red>index</font>/<font color=blue>hi</font>”访问<font color=red>index</font>Controller-><font color=blue>hi</font>()<br />
+					2.访问“http://yourSiteUrl/index/hi/<font color=red>param1</font>/value1/<font color=blue>param2</font>/value2”可将参数“<font color=red>param1</font>”和“<font color=blue>param2</font>”传递到indexController的function hi()
+				</p>
+				<li>
+					配置
+				</li>
+				<p>
+					1.修改配置文件“/config/app.config.php”中的“APP_PAT”和“URL_PATHINFO”配置项
+					2.添加服务器Rewrite规则
+				</p>
+			</ul>
+			<p>
+				<a class="btn btn-primary btn-large" href="http://www.xuhaixiao.com/urlrewrite/" target="_blank">详细</a>
 			</p>
 		</div>
 	</div>
