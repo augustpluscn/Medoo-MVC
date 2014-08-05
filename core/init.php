@@ -9,6 +9,7 @@ error_reporting(E_ALL^E_NOTICE);
 ini_set( 'display_errors' , true );
 
 include_once( WROOT . 'config' . DS . 'db.config.php' );
+include_once( WROOT . 'config' . DS . 'app.config.php' );
 include_once( CROOT . 'medoo.php' );
 
 //lib Class include
@@ -46,8 +47,16 @@ function get( $str )
 	return isset( $_GET[$str] ) ? $_GET[$str] : false;
 }
 
-$c = get('c') ? get('c') : 'index'; //$GLOBALS['c'] = v('c') ? v('c') : c('default_controller');
-$a = get('a') ? get('a') : 'index'; //$GLOBALS['a'] = v('a') ? v('a') : c('default_action');
+
+
+if (URL_PATHINFO == 'true') {
+  include_once( WROOT . 'core' . DS . 'pathinfor.php' );
+}
+else {
+  $c = get('c') ? get('c') : 'index';
+  $a = get('a') ? get('a') : 'index';
+}
+
 
 $c = basename(strtolower( $c ));
 $a =  basename(strtolower( $a ));

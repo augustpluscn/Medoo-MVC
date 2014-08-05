@@ -15,4 +15,8 @@ class indexController extends medoo
 		$this->display( $datas );
 	}
 
+	function hi()
+	{
+		echo 'hi';
+	}
 }
