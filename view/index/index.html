@@ -86,7 +86,7 @@
 				</p>
 			</ul>
 			<p>
-				<a class="btn btn-primary btn-large" href="http://www.xuhaixiao.com/medoo-mvc/" target="_blank">查看详细说明</a>
+				<a class="btn btn-primary btn-large" href="http://www.xuhaixiao.com/medoo-mvc/" target="_blank">查看详细使用说明</a>
 			</p>
 		</div>
 		<div class="col-md-6 column">
@@ -105,12 +105,33 @@
 					配置
 				</li>
 				<p>
-					1.修改配置文件“/config/app.config.php”中的“APP_PAT”和“URL_PATHINFO”配置项
-					2.添加服务器Rewrite规则
+					1.修改配置文件“/config/app.config.php”中的“APP_PAT”和“URL_PATHINFO”配置项<br />
+					2.添加服务器Rewrite规则<br />
+				</p>
+				<p>
+					Apache：<br />
+						<font color=green>
+					    RewriteEngine on <br />
+					    RewriteCond %{REQUEST_FILENAME} !-d <br />
+					    RewriteCond %{REQUEST_FILENAME} !-f <br />
+					    RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L] <br />
+						</font>
+				</p>
+				<p>
+					Nginx：<br />
+						<font color=green>
+											location / { <br />
+						&nbsp;&nbsp;&nbsp;&nbsp;root   /rootPath/; <br />
+						&nbsp;&nbsp;&nbsp;&nbsp;index  index.php index.html index.htm; <br />
+						&nbsp;&nbsp;&nbsp;&nbsp;if (!-e $request_filename) { <br />
+						&nbsp;&nbsp;&nbsp;&nbsp;rewrite  ^/(.*)$  /index.php?s=$1  last; <br />
+						&nbsp;&nbsp;&nbsp;&nbsp;} <br />
+											} <br />
+						</font>
 				</p>
 			</ul>
 			<p>
-				<a class="btn btn-primary btn-large" href="http://www.xuhaixiao.com/urlrewrite/" target="_blank">详细</a>
+				<a class="btn btn-primary btn-large" href="http://www.xuhaixiao.com/urlrewrite/" target="_blank">Url Rewrite详细说明</a>
 			</p>
 		</div>
 	</div>
