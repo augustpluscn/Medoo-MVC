@@ -38,3 +38,26 @@ Medoo-MVC是一个基于Medoo的简单的mvc框架，如果之前使用过Medoo�
 ## Medoo-MVC实例
 
 基于Medoo-MVC开发的开源项目 shop72hour ：http://www.xuhaixiao.com/shop72hour/
+
+
+# Medoo-MVC新增功能
+
+1.Url Rewrite (2014-08-05)  
+(1)修改配置文件“/config/app.config.php”中的“APP_PATH”和“URL_PATHINFO”配置项  
+(2)添加服务器Rewrite规则  
+Apache：
+
+    RewriteEngine on  
+    RewriteCond %{REQUEST_FILENAME} !-d  
+    RewriteCond %{REQUEST_FILENAME} !-f  
+    RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]  
+
+Nginx:
+
+    location / {  
+        root /rootPath/;  
+        index index.php index.html index.htm;  
+        if (!-e $request_filename) {  
+        rewrite ^/(.*)$ /index.php?s=$1 last;  
+        }  
+    }  
