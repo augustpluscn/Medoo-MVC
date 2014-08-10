@@ -33,7 +33,7 @@ Medoo-MVC是一个基于Medoo的简单的mvc框架，如果之前使用过Medoo�
 
 ## 详细介绍
 
-参考http://www.xuhaixiao.com/medoo-mvc/
+参考：http://www.xuhaixiao.com/medoo-mvc/
 
 ## Medoo-MVC实例
 
@@ -42,7 +42,7 @@ Medoo-MVC是一个基于Medoo的简单的mvc框架，如果之前使用过Medoo�
 
 # Medoo-MVC新增功能
 
-1.Url Rewrite (2014-08-05)  
+#### 1.Url Rewrite (2014-08-05)
 (1)修改配置文件“/config/app.config.php”中的“APP_PATH”和“URL_PATHINFO”配置项  
 (2)添加服务器Rewrite规则  
 Apache：
@@ -61,3 +61,4 @@ Nginx:
         rewrite ^/(.*)$ /index.php?s=$1 last;  
         }  
     }  
+较详细的说明可参见：http://www.xuhaixiao.com/urlrewrite/
